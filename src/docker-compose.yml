@@ -11,7 +11,7 @@ services:
 
 
   portainer:
-    image: portainer:portainer-ce
+    image: portainer/portainer-ce
 
 
   catalog.api:
