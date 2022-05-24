@@ -36,7 +36,7 @@ services:
   orderdb:
     container_name: orderdb
     environment:
-        SA_PASSWORD: "SSM1234567"
+        SA_PASSWORD: "Allthebest100%"
         ACCEPT_EULA: "Y"
     restart: always
     ports:
@@ -106,4 +106,15 @@ services:
       - discountdb
     ports:
       - "8002:80"
+
+
+  ordering.api:
+    container_name: ordering.api    
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:OrderingConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=Allthebest100%;"
+    depends_on:
+        - orderdb
+    ports:
+        - "8004:80"
 
